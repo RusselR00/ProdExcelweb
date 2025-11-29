@@ -2,8 +2,8 @@ import Layout from "@/components/layout";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import vesselImage from "@assets/stock_images/anchor_handling_tug__dad288ec.jpg";
-import detailImage from "@assets/stock_images/anchor_handling_tug__401279b6.jpg";
+import vesselImage from "@assets/attached_assets/242310_1764415566934.webp";
+import detailImage from "@assets/attached_assets/242308_1764415566933.webp";
 
 export default function Vessel() {
   return (

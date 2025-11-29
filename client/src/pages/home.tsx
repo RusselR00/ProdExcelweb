@@ -30,7 +30,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg" className="text-base px-8 h-12 bg-secondary hover:bg-secondary/90 text-slate-900 border-none shadow-lg shadow-secondary/20 font-semibold">
+                <Button size="lg" className="text-base px-8 h-12 text-[#ffffff] bg-[#fd8f43] hover:bg-[#fd8f43]/90 border-none shadow-lg shadow-secondary/20 font-semibold">
                   Request Charter
                 </Button>
               </Link>
