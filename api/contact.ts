@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { db } from "../../server/db";
-import { contactMessages, insertContactMessageSchema } from "../../shared/schema";
+import { db } from "../server/db";
+import { contactMessages, insertContactMessageSchema } from "../shared/schema";
 import { eq, and, gt, sql } from "drizzle-orm";
 
 const RATE_LIMIT = {

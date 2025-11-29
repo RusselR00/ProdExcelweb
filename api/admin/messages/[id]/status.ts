@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { db } from "../../../server/db";
-import { contactMessages } from "../../../shared/schema";
+import { db } from "../../../../server/db";
+import { contactMessages } from "../../../../shared/schema";
 import { eq } from "drizzle-orm";
-import { verifyAuth } from "../../_lib/auth";
+import { verifyAuth } from "../../../_lib/auth";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (req.method !== "PATCH") {
