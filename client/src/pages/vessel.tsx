@@ -2,8 +2,8 @@ import Layout from "@/components/layout";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import vesselImage from "@assets/242310_1764415566934.webp";
-import detailImage from "@assets/242308_1764415566933.webp";
+import vesselImage from "@assets/242310_1764415566934.jpg";
+import detailImage from "@assets/242308_1764415566933.jpg";
 
 export default function Vessel() {
   return (
@@ -23,16 +23,16 @@ export default function Vessel() {
               <div className="grid grid-cols-2 gap-4">
                 <img src={detailImage} alt="Winch Detail" className="rounded-xl shadow-lg w-full h-48 object-cover" />
                 <div className="rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 font-medium text-center">Deck Layout View
-                (Coming Soon)</div>
+                  (Coming Soon)</div>
               </div>
             </div>
-            
+
             <div>
               <div className="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-4">
                 Flagship Vessel
               </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">BOURBON LIBERTY 206</h2>
-              <p className="text-slate-600 mb-8 leading-relaxed">The BOURBON LIBERTY 206 is a high-performance DP 2 diesel-electric anchor handling tug supply vessel. Designed for versatility, it offers environmentally friendly propulsion, exceptional maneuverability with fully redundant dynamic positioning (Class II), and capabilities typically found in much larger vessels. It is equally at home serving shallow water ports or deepwater installations.</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">AQUA HERCULES</h2>
+              <p className="text-slate-600 mb-8 leading-relaxed">The AQUA HERCULES is a high-performance DP 2 diesel-electric anchor handling tug supply vessel. Designed for versatility, it offers environmentally friendly propulsion, exceptional maneuverability with fully redundant dynamic positioning (Class II), and capabilities typically found in much larger vessels. It is equally at home serving shallow water ports or deepwater installations.</p>
 
               <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
                 <div className="p-4 bg-slate-50 border-b border-slate-200 font-bold text-primary">
@@ -56,7 +56,7 @@ export default function Vessel() {
                       <TableCell className="font-medium text-slate-500">Main Engines</TableCell>
                       <TableCell className="font-bold text-slate-900">3 x 1,825 kW (Diesel Electric)</TableCell>
                     </TableRow>
-                     <TableRow>
+                    <TableRow>
                       <TableCell className="font-medium text-slate-500">Propulsion</TableCell>
                       <TableCell className="font-bold text-slate-900">3 x 1,685 kW Z-Drive</TableCell>
                     </TableRow>
@@ -68,7 +68,7 @@ export default function Vessel() {
                       <TableCell className="font-medium text-slate-500">Deck Area</TableCell>
                       <TableCell className="font-bold text-slate-900">331 m² (5 mt/m²)</TableCell>
                     </TableRow>
-                     <TableRow>
+                    <TableRow>
                       <TableCell className="font-medium text-slate-500">Deadweight</TableCell>
                       <TableCell className="font-bold text-slate-900">1,460 t (at max draft)</TableCell>
                     </TableRow>
