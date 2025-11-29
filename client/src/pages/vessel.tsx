@@ -2,8 +2,11 @@ import Layout from "@/components/layout";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import vesselImage from "@assets/242310_1764415566934.jpg";
-import detailImage from "@assets/242308_1764415566933.jpg";
+import vesselImage from "@assets/242310_1764415566934.png";
+import detailImage from "@assets/242308_1764415566933.png";
+import additionalImage1 from "@assets/242308_17644155669335.jpg";
+import additionalImage2 from "@assets/242310_1764415566936.jpg";
+import additionalImage3 from "@assets/download_1764415566937.png";
 
 export default function Vessel() {
   return (
@@ -19,11 +22,14 @@ export default function Vessel() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 mb-20">
             <div className="space-y-4">
-              <img src={vesselImage} alt="BOURBON LIBERTY 200 AHTS" className="rounded-2xl shadow-2xl w-full object-cover ml-[0px] mr-[0px] pl-[0px] pr-[0px] pt-[0px] pb-[0px] mt-[11px] mb-[11px]" />
+              <img src={vesselImage} alt="AQUA HERCULES AHTS" className="rounded-2xl shadow-2xl w-full object-cover ml-[0px] mr-[0px] pl-[0px] pr-[0px] pt-[0px] pb-[0px] mt-[11px] mb-[11px]" />
               <div className="grid grid-cols-2 gap-4">
-                <img src={detailImage} alt="Winch Detail" className="rounded-xl shadow-lg w-full h-48 object-cover" />
-                <div className="rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 font-medium text-center">Deck Layout View
-                  (Coming Soon)</div>
+                <img src={detailImage} alt="Vessel Detail 1" className="rounded-xl shadow-lg w-full h-48 object-cover" />
+                <img src={additionalImage1} alt="Vessel Detail 2" className="rounded-xl shadow-lg w-full h-48 object-cover" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <img src={additionalImage2} alt="Vessel Detail 3" className="rounded-xl shadow-lg w-full h-48 object-cover" />
+                <img src={additionalImage3} alt="Vessel Detail 4" className="rounded-xl shadow-lg w-full h-48 object-cover" />
               </div>
             </div>
 
