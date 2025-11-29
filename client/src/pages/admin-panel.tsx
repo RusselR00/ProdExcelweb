@@ -12,14 +12,14 @@ interface Message {
   email: string;
   subject: string;
   message: string;
-  status: "unresponded" | "responded" | "closed";
+  status: "pending" | "replied" | "resolved";
   createdAt: string;
 }
 
 const statusColors: Record<string, string> = {
-  unresponded: "bg-red-100 text-red-800 hover:bg-red-200",
-  responded: "bg-blue-100 text-blue-800 hover:bg-blue-200",
-  closed: "bg-green-100 text-green-800 hover:bg-green-200",
+  pending: "bg-red-100 text-red-800 hover:bg-red-200",
+  replied: "bg-blue-100 text-blue-800 hover:bg-blue-200",
+  resolved: "bg-green-100 text-green-800 hover:bg-green-200",
 };
 
 export default function AdminPanel() {
@@ -70,7 +70,7 @@ export default function AdminPanel() {
     }
   }
 
-  async function handleStatusChange(messageId: string, newStatus: "unresponded" | "responded" | "closed") {
+  async function handleStatusChange(messageId: string, newStatus: "pending" | "replied" | "resolved") {
     try {
       const response = await fetch(`/api/admin/messages/${messageId}/status`, {
         method: "PATCH",
@@ -147,7 +147,7 @@ export default function AdminPanel() {
                         </TableCell>
                         <TableCell data-testid={`cell-status-${msg.id}`}>
                           <div className="flex gap-2 flex-wrap">
-                            {(["unresponded", "responded", "closed"] as const).map((s) => (
+                            {(["pending", "replied", "resolved"] as const).map((s) => (
                               <button
                                 key={s}
                                 onClick={() => handleStatusChange(msg.id, s)}

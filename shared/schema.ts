@@ -15,7 +15,7 @@ export const contactMessages = pgTable("contact_messages", {
   email: text("email").notNull(),
   subject: text("subject").notNull(),
   message: text("message").notNull(),
-  status: text("status").default("unresponded").notNull(), // 'unresponded', 'responded', 'closed'
+  status: text("status").default("pending").notNull(), // 'pending', 'replied', 'resolved'
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
