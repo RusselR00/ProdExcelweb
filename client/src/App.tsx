@@ -11,6 +11,8 @@ import Services from "@/pages/services";
 import Contact from "@/pages/contact";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsConditions from "@/pages/terms-conditions";
+import AdminLogin from "@/pages/admin-login";
+import AdminPanel from "@/pages/admin-panel";
 
 function Router() {
   return (
@@ -22,6 +24,8 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-conditions" component={TermsConditions} />
+      <Route path="/admin/login" component={AdminLogin} />
+      <Route path="/admin" component={AdminPanel} />
       <Route component={NotFound} />
     </Switch>
   );

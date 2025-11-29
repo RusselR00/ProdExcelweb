@@ -12,7 +12,6 @@ export default function TermsConditions() {
 
         <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
           <h1 className="text-4xl font-bold mb-2 text-slate-900">Terms and Conditions</h1>
-          <p className="text-slate-500 mb-8">Last updated: November 29, 2025</p>
 
           <div className="prose prose-slate max-w-none space-y-6">
             <section>
@@ -84,8 +83,8 @@ export default function TermsConditions() {
                 If you have any questions about these Terms and Conditions, please contact us at:
               </p>
               <p className="text-slate-700 mt-4">
-                Email: legal@example.com<br/>
-                Address: 123 Main Street, City, State 12345
+                Email: management@excelessel.com<br/>
+                Address: 12 Marina Boulevard, Marina Bay Financial Centre, Singapore 018982
               </p>
             </section>
           </div>

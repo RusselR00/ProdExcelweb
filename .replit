@@ -15,10 +15,6 @@ run = ["npm", "run", "start"]
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 43605
-externalPort = 3000
-
 [env]
 PORT = "5000"
 
@@ -45,3 +41,8 @@ waitForPort = 5000
 
 [agent]
 mockupState = "FULLSTACK"
+
+[userenv]
+
+[userenv.shared]
+ADMIN_PASSWORD = "excelessel2025"
