@@ -8,6 +8,7 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
   createContactMessage(message: InsertContactMessage): Promise<ContactMessage>;
   getContactMessages(): Promise<ContactMessage[]>;
+  updateMessageStatus(messageId: string, status: string): Promise<ContactMessage | undefined>;
 }
 
 export class DrizzleStorage implements IStorage {
@@ -33,6 +34,15 @@ export class DrizzleStorage implements IStorage {
 
   async getContactMessages(): Promise<ContactMessage[]> {
     return db.select().from(contactMessages);
+  }
+
+  async updateMessageStatus(messageId: string, status: string): Promise<ContactMessage | undefined> {
+    const result = await db
+      .update(contactMessages)
+      .set({ status })
+      .where(eq(contactMessages.id, messageId))
+      .returning();
+    return result[0];
   }
 }
 
