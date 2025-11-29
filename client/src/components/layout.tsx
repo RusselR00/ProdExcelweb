@@ -147,8 +147,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               © {new Date().getFullYear()} Excelessel Marine Services. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-slate-500">
-              <a href="#" className="hover:text-primary">Privacy Policy</a>
-              <a href="#" className="hover:text-primary">Terms of Service</a>
+              <Link href="/privacy-policy" className="hover:text-primary cursor-pointer">Privacy Policy</Link>
+              <Link href="/terms-conditions" className="hover:text-primary cursor-pointer">Terms of Service</Link>
             </div>
           </div>
         </div>
