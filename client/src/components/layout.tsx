@@ -102,7 +102,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary text-white pt-16 pb-8">
+      <footer className="bg-slate-50 text-slate-900 pt-16 pb-8 border-t border-slate-200">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-1 md:col-span-2">
@@ -110,20 +110,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <img 
                   src={logoImage} 
                   alt="Excelessel Offshore Pte Ltd" 
-                  className="h-16 w-auto object-contain rounded-sm" 
+                  className="h-16 w-auto object-contain rounded-sm mix-blend-multiply" 
                 />
               </div>
-              <p className="text-white/70 max-w-md mb-6 leading-relaxed">
+              <p className="text-slate-600 max-w-md mb-6 leading-relaxed">
                 Singapore-based marine service provider specializing in Anchor Handling Tug (AHT) chartering, tug operations, and reliable marine support services.
               </p>
             </div>
             
             <div>
-              <h4 className="font-heading font-semibold text-lg mb-4">Quick Links</h4>
+              <h4 className="font-heading font-semibold text-lg mb-4 text-primary">Quick Links</h4>
               <ul className="space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-white/70 hover:text-secondary transition-colors cursor-pointer">
+                    <Link href={link.href} className="text-slate-600 hover:text-secondary transition-colors cursor-pointer">
                       {link.label}
                     </Link>
                   </li>
@@ -132,8 +132,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
 
             <div>
-              <h4 className="font-heading font-semibold text-lg mb-4">Contact</h4>
-              <address className="not-italic text-white/70 space-y-2">
+              <h4 className="font-heading font-semibold text-lg mb-4 text-primary">Contact</h4>
+              <address className="not-italic text-slate-600 space-y-2">
                 <p>Singapore Office</p>
                 <p>management@excelessel.com</p>
                 <p>+65 6123 4567</p>
@@ -141,13 +141,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
           
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-white/50">
+          <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-slate-500">
               © {new Date().getFullYear()} Excelessel Marine Services. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-white/50">
-              <a href="#" className="hover:text-white">Privacy Policy</a>
-              <a href="#" className="hover:text-white">Terms of Service</a>
+            <div className="flex gap-6 text-sm text-slate-500">
+              <a href="#" className="hover:text-primary">Privacy Policy</a>
+              <a href="#" className="hover:text-primary">Terms of Service</a>
             </div>
           </div>
         </div>

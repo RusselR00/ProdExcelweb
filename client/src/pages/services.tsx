@@ -75,7 +75,7 @@ export default function Services() {
           <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
             Every marine project is unique. Contact our operations team to discuss your specific vessel requirements and operational parameters.
           </p>
-          <a href="/contact" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-white shadow transition-colors hover:bg-primary/90">
+          <a href="/contact" className="inline-flex h-12 items-center justify-center rounded-md bg-secondary px-8 text-sm font-semibold text-slate-900 shadow transition-colors hover:bg-secondary/80">
             Contact Operations Team
           </a>
         </div>

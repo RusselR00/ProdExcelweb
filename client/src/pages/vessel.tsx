@@ -90,7 +90,7 @@ export default function Vessel() {
 
               <div className="mt-8">
                 <Link href="/contact">
-                  <Button size="lg" className="w-full md:w-auto bg-primary text-white hover:bg-primary/90">
+                  <Button size="lg" className="w-full md:w-auto bg-secondary text-slate-900 hover:bg-secondary/80 font-semibold">
                     Inquire Availability
                   </Button>
                 </Link>

@@ -30,7 +30,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg" className="text-base px-8 h-12 bg-secondary hover:bg-secondary/90 text-white border-none shadow-lg shadow-secondary/20">
+                <Button size="lg" className="text-base px-8 h-12 bg-secondary hover:bg-secondary/90 text-slate-900 border-none shadow-lg shadow-secondary/20 font-semibold">
                   Request Charter
                 </Button>
               </Link>
@@ -45,34 +45,34 @@ export default function Home() {
       </section>
 
       {/* Stats/Features Strip */}
-      <div className="bg-primary text-white py-12">
+      <div className="bg-slate-100 text-slate-900 py-12 border-b border-slate-200">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+            <div className="flex items-center gap-4 p-4 rounded-lg bg-white border border-slate-200 shadow-sm">
               <div className="p-3 rounded-full bg-secondary/20 text-secondary">
                 <ShieldCheck className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-heading font-semibold text-lg">Safety First</h3>
-                <p className="text-sm text-white/70">Adhering to highest maritime safety standards</p>
+                <h3 className="font-heading font-semibold text-lg text-primary">Safety First</h3>
+                <p className="text-sm text-slate-600">Adhering to highest maritime safety standards</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+            <div className="flex items-center gap-4 p-4 rounded-lg bg-white border border-slate-200 shadow-sm">
               <div className="p-3 rounded-full bg-secondary/20 text-secondary">
                 <Anchor className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-heading font-semibold text-lg">Specialized Fleet</h3>
-                <p className="text-sm text-white/70">Dedicated Anchor Handling Tug capabilities</p>
+                <h3 className="font-heading font-semibold text-lg text-primary">Specialized Fleet</h3>
+                <p className="text-sm text-slate-600">Dedicated Anchor Handling Tug capabilities</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+            <div className="flex items-center gap-4 p-4 rounded-lg bg-white border border-slate-200 shadow-sm">
               <div className="p-3 rounded-full bg-secondary/20 text-secondary">
                 <Globe className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-heading font-semibold text-lg">Regional Reach</h3>
-                <p className="text-sm text-white/70">Operating throughout SE Asia waters</p>
+                <h3 className="font-heading font-semibold text-lg text-primary">Regional Reach</h3>
+                <p className="text-sm text-slate-600">Operating throughout SE Asia waters</p>
               </div>
             </div>
           </div>

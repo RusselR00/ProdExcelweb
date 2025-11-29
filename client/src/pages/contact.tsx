@@ -169,7 +169,7 @@ export default function Contact() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90 text-white h-12 text-lg">
+                  <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90 text-slate-900 font-semibold h-12 text-lg">
                     Send Request
                   </Button>
                 </form>
