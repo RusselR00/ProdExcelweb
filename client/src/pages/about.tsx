@@ -1,0 +1,66 @@
+import Layout from "@/components/layout";
+import { CheckCircle2 } from "lucide-react";
+
+export default function About() {
+  return (
+    <Layout>
+      <div className="bg-primary py-24 text-center text-white">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">About Excelessel</h1>
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">Setting the standard in marine chartering reliability.</p>
+        </div>
+      </div>
+
+      <section className="py-20">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-16">
+              <h2 className="text-3xl font-heading font-bold text-primary mb-6">Our Background</h2>
+              <p className="text-slate-600 leading-relaxed text-lg mb-6">
+                Excelessel was founded with a singular vision: to provide uncompromised marine support services in the bustling maritime hub of Singapore. As a specialized operator, we focus on the nuances of Anchor Handling Tug (AHT) operations, ensuring that every charter is executed with precision engineering and maritime expertise.
+              </p>
+              <p className="text-slate-600 leading-relaxed text-lg">
+                Our strategic location in Singapore allows us to effectively serve the Southeast Asian offshore sector, providing rapid deployment and reliable support for shipping, construction, and energy projects.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                <h3 className="text-2xl font-heading font-bold text-primary mb-4">Our Vision</h3>
+                <p className="text-slate-600">
+                  To be the most trusted partner for specialized tug chartering in the region, recognized for our safety record and operational readiness.
+                </p>
+              </div>
+              <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                <h3 className="text-2xl font-heading font-bold text-primary mb-4">Our Mission</h3>
+                <p className="text-slate-600">
+                  Delivering power and precision through well-maintained assets and expert crew, ensuring client success in every marine operation.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-heading font-bold text-primary mb-8">Why Choose Excelessel?</h2>
+              <div className="grid gap-6">
+                {[
+                  { title: "Operational Excellence", desc: "A rigorous approach to maintenance and crew training ensures zero downtime." },
+                  { title: "Safety First Culture", desc: "We adhere to international maritime safety standards without compromise." },
+                  { title: "Regional Expertise", desc: "Deep understanding of Singapore and regional waters logistical challenges." },
+                  { title: "Direct Owner Chartering", desc: "No middlemen – direct communication and accountability." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <CheckCircle2 className="h-6 w-6 text-secondary flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-bold text-primary">{item.title}</h4>
+                      <p className="text-slate-600">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+}

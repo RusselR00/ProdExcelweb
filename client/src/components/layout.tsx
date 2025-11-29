@@ -1,0 +1,154 @@
+import { Link, useLocation } from "wouter";
+import { Menu, Anchor } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const [location] = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/vessel", label: "Our Vessel" },
+    { href: "/services", label: "Services" },
+    { href: "/contact", label: "Contact" },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background font-sans">
+      {/* Navigation */}
+      <header
+        className={`fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent ${
+          scrolled ? "bg-white/95 backdrop-blur-md shadow-sm border-gray-100 py-2" : "bg-transparent py-4"
+        }`}
+      >
+        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 group cursor-pointer">
+            <div className={`p-2 rounded bg-primary text-white transition-transform group-hover:scale-105`}>
+              <Anchor className="h-6 w-6" />
+            </div>
+            <span className={`text-2xl font-heading font-bold tracking-tight ${scrolled ? "text-primary" : "text-primary md:text-white"}`}>
+              EXCELESSEL
+            </span>
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.href} 
+                href={link.href}
+                className={`text-sm font-medium transition-colors hover:text-secondary cursor-pointer ${
+                  location === link.href
+                    ? "text-secondary font-semibold"
+                    : scrolled
+                    ? "text-slate-600"
+                    : "text-white/90"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link href="/contact">
+              <Button variant={scrolled ? "default" : "secondary"} className="ml-4">
+                Request Charter
+              </Button>
+            </Link>
+          </nav>
+
+          {/* Mobile Nav */}
+          <Sheet>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon" className={scrolled ? "text-primary" : "text-white"}>
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <div className="flex flex-col gap-6 mt-10">
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.href} 
+                    href={link.href}
+                    className={`text-lg font-medium transition-colors hover:text-secondary cursor-pointer ${
+                      location === link.href ? "text-secondary" : "text-slate-600"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Link href="/contact">
+                  <Button className="w-full mt-4">Request Charter</Button>
+                </Link>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-grow pt-0">
+        {children}
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-primary text-white pt-16 pb-8">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center gap-2 mb-4">
+                <Anchor className="h-6 w-6 text-secondary" />
+                <span className="text-2xl font-heading font-bold">EXCELESSEL</span>
+              </div>
+              <p className="text-white/70 max-w-md mb-6 leading-relaxed">
+                Singapore-based marine service provider specializing in Anchor Handling Tug (AHT) chartering, tug operations, and reliable marine support services.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-heading font-semibold text-lg mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-white/70 hover:text-secondary transition-colors cursor-pointer">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-heading font-semibold text-lg mb-4">Contact</h4>
+              <address className="not-italic text-white/70 space-y-2">
+                <p>Singapore Office</p>
+                <p>management@excelessel.com</p>
+                <p>+65 6123 4567</p>
+              </address>
+            </div>
+          </div>
+          
+          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-white/50">
+              © {new Date().getFullYear()} Excelessel Marine Services. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-sm text-white/50">
+              <a href="#" className="hover:text-white">Privacy Policy</a>
+              <a href="#" className="hover:text-white">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
