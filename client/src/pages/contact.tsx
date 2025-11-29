@@ -10,7 +10,7 @@ import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import contactHero from "@assets/generated_images/hero_image_of_an_anchor_handling_tug_at_sea.png";
+import contactHero from "@assets/generated_images/hero_image_of_an_anchor_handling_tug_at_sea.jpg";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
