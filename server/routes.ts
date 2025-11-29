@@ -135,7 +135,7 @@ export async function registerRoutes(
       const { id } = req.params;
       const { status } = req.body;
 
-      if (!["cold", "responded", "closed"].includes(status)) {
+      if (!["unresponded", "responded", "closed"].includes(status)) {
         return res.status(400).json({ error: "Invalid status" });
       }
 

@@ -12,12 +12,12 @@ interface Message {
   email: string;
   subject: string;
   message: string;
-  status: "cold" | "responded" | "closed";
+  status: "unresponded" | "responded" | "closed";
   createdAt: string;
 }
 
 const statusColors: Record<string, string> = {
-  cold: "bg-slate-100 text-slate-800 hover:bg-slate-200",
+  unresponded: "bg-red-100 text-red-800 hover:bg-red-200",
   responded: "bg-blue-100 text-blue-800 hover:bg-blue-200",
   closed: "bg-green-100 text-green-800 hover:bg-green-200",
 };
@@ -70,7 +70,7 @@ export default function AdminPanel() {
     }
   }
 
-  async function handleStatusChange(messageId: string, newStatus: "cold" | "responded" | "closed") {
+  async function handleStatusChange(messageId: string, newStatus: "unresponded" | "responded" | "closed") {
     try {
       const response = await fetch(`/api/admin/messages/${messageId}/status`, {
         method: "PATCH",
@@ -147,7 +147,7 @@ export default function AdminPanel() {
                         </TableCell>
                         <TableCell data-testid={`cell-status-${msg.id}`}>
                           <div className="flex gap-2 flex-wrap">
-                            {(["cold", "responded", "closed"] as const).map((s) => (
+                            {(["unresponded", "responded", "closed"] as const).map((s) => (
                               <button
                                 key={s}
                                 onClick={() => handleStatusChange(msg.id, s)}
