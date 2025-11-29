@@ -5,21 +5,27 @@ import heroImage from "@assets/generated_images/side_profile_of_the_aht_vessel.p
 export default function About() {
   return (
     <Layout>
-      <div className="relative py-24 text-center text-white overflow-hidden">
+      {/* Hero Section - Modernized */}
+      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-           <img 
-             src={heroImage} 
-             alt="Excelessel AHT Vessel" 
-             className="w-full h-full object-cover"
-           />
-           <div className="absolute inset-0 bg-slate-900/70" />
-           <div className="absolute inset-0 bg-primary/50 mix-blend-multiply" />
+          <img
+            src={heroImage}
+            alt="Excelessel AHT Vessel"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/40 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent mix-blend-multiply" />
         </div>
-        <div className="relative container z-10 mx-auto px-4 flex flex-col items-center justify-center h-full min-h-[300px]">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 drop-shadow-lg">About Excelessel</h1>
-          <p className="text-xl text-white font-medium max-w-2xl mx-auto drop-shadow-md leading-relaxed">Setting the standard in marine chartering reliability.</p>
+        <div className="relative container z-10 mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg leading-tight">
+              About <span className="text-secondary">Excelessel</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white font-medium drop-shadow-md leading-relaxed">
+              Setting the standard in marine chartering reliability.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
@@ -35,15 +41,15 @@ export default function About() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+              <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <h3 className="text-2xl font-heading font-bold text-primary mb-4">Our Vision</h3>
-                <p className="text-slate-600">
+                <p className="text-slate-600 leading-relaxed">
                   To be the most trusted partner for specialized tug chartering in the region, recognized for our safety record and operational readiness.
                 </p>
               </div>
-              <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+              <div className="p-8 bg-white rounded-2xl border border-slate-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <h3 className="text-2xl font-heading font-bold text-primary mb-4">Our Mission</h3>
-                <p className="text-slate-600">
+                <p className="text-slate-600 leading-relaxed">
                   Delivering power and precision through well-maintained assets and expert crew, ensuring client success in every marine operation.
                 </p>
               </div>

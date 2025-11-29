@@ -11,13 +11,21 @@ import additionalImage3 from "@assets/download_1764415566937.png";
 export default function Vessel() {
   return (
     <Layout>
-      <div className="bg-slate-900 py-24 text-center text-white relative overflow-hidden">
+      {/* Hero Section - Modernized */}
+      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1518106774371-a46c530a2271?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 drop-shadow-lg">Our Fleet</h1>
-          <p className="text-xl text-white font-medium drop-shadow-md">Anchor Handling Tug (AHT) Specifications</p>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-slate-900" />
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg leading-tight">
+              Our <span className="text-secondary">Fleet</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white font-medium drop-shadow-md leading-relaxed">
+              Anchor Handling Tug (AHT) Specifications
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 mb-20">

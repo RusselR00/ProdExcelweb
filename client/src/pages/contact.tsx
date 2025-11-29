@@ -59,21 +59,27 @@ export default function Contact() {
 
   return (
     <Layout>
-      <div className="relative py-24 text-center text-white overflow-hidden">
+      {/* Hero Section - Modernized */}
+      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={contactHero}
             alt="Contact Excelessel"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-slate-900/70" />
-          <div className="absolute inset-0 bg-primary/50 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-primary/40 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent mix-blend-multiply" />
         </div>
-        <div className="relative container z-10 mx-auto px-4 flex flex-col items-center justify-center h-full min-h-[300px]">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 drop-shadow-lg">Contact Us</h1>
-          <p className="text-xl text-white font-medium drop-shadow-md leading-relaxed">Get in touch for chartering rates and availability.</p>
+        <div className="relative container z-10 mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg leading-tight">
+              Contact <span className="text-secondary">Us</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white font-medium drop-shadow-md leading-relaxed">
+              Get in touch for chartering rates and availability.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6">
