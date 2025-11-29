@@ -61,7 +61,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </Link>
             ))}
             <Link href="/contact">
-              <Button variant={scrolled ? "default" : "secondary"} className="ml-4">
+              <Button 
+                variant={scrolled ? "default" : "secondary"} 
+                className={scrolled ? "ml-4" : "ml-4 text-[#06b1c6] bg-[#003145] hover:bg-[#003145]/90"}
+              >
                 Request Charter
               </Button>
             </Link>
