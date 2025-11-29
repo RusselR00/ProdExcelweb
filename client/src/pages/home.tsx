@@ -11,21 +11,21 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImage} 
-            alt="Excelessel AHT Vessel at Sea" 
+          <img
+            src={heroImage}
+            alt="Excelessel AHT Vessel at Sea"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-primary/40 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent mix-blend-multiply" />
         </div>
 
         <div className="container relative z-10 px-4 md:px-6 text-center md:text-left pt-20">
-          <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6 drop-shadow-lg">
-              Precision. Power. <br/>
+          <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-1000 bg-slate-900/50 md:bg-slate-900/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6 drop-shadow-2xl">
+              Precision. Power. <br />
               <span className="text-secondary">Reliability.</span>
             </h1>
-            <p className="text-lg md:text-xl text-white font-medium mb-8 max-w-xl leading-relaxed drop-shadow-md">
+            <p className="text-lg md:text-xl text-white font-medium mb-8 max-w-xl leading-relaxed drop-shadow-lg">
               Specialized Anchor Handling Tug chartering and marine support operations. We deliver maritime excellence across Singapore and beyond.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
