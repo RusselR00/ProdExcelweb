@@ -7,14 +7,21 @@ import detailImage from "@assets/242308_1764415566933.png";
 import additionalImage1 from "@assets/242308_17644155669335.jpg";
 import additionalImage2 from "@assets/242310_1764415566936.jpg";
 import additionalImage3 from "@assets/download_1764415566937.png";
+import fleetHeroImage from "@assets/d0f8766d-5333-495d-a6e2-f11167107e9a.jpeg";
 
 export default function Vessel() {
   return (
     <Layout>
       {/* Hero Section - Modernized */}
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1518106774371-a46c530a2271?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-slate-900" />
+        <div className="absolute inset-0 z-0">
+          <img
+            src={fleetHeroImage}
+            alt="Excelessel Fleet"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-primary/40 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent mix-blend-multiply" />
         <div className="container relative z-10 mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto bg-slate-900/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-2xl leading-tight">
