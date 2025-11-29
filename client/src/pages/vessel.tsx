@@ -16,11 +16,11 @@ export default function Vessel() {
         <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1518106774371-a46c530a2271?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-slate-900" />
         <div className="container relative z-10 mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg leading-tight">
+          <div className="max-w-3xl mx-auto bg-slate-900/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-2xl leading-tight">
               Our <span className="text-secondary">Fleet</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white font-medium drop-shadow-md leading-relaxed">
+            <p className="text-xl md:text-2xl text-white font-medium drop-shadow-lg leading-relaxed">
               Anchor Handling Tug (AHT) Specifications
             </p>
           </div>

@@ -50,11 +50,11 @@ export default function Services() {
           <div className="absolute inset-0 bg-primary/40 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent mix-blend-multiply" />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg leading-tight">
+          <div className="max-w-3xl mx-auto bg-slate-900/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 drop-shadow-2xl leading-tight">
               Our <span className="text-secondary">Services</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white font-medium drop-shadow-md leading-relaxed">
+            <p className="text-xl md:text-2xl text-white font-medium drop-shadow-lg leading-relaxed">
               Comprehensive marine solutions for a demanding industry.
             </p>
           </div>
