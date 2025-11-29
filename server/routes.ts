@@ -128,5 +128,28 @@ export async function registerRoutes(
     }
   });
 
+  app.patch("/api/admin/messages/:id/status", (req, res, next) => {
+    requireAdmin(req, res, next);
+  }, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { status } = req.body;
+
+      if (!["cold", "responded", "closed"].includes(status)) {
+        return res.status(400).json({ error: "Invalid status" });
+      }
+
+      const message = await storage.updateMessageStatus(id, status);
+      if (!message) {
+        return res.status(404).json({ error: "Message not found" });
+      }
+
+      res.json(message);
+    } catch (error) {
+      console.error("Status update error:", error);
+      res.status(400).json({ error: "Failed to update status" });
+    }
+  });
+
   return httpServer;
 }

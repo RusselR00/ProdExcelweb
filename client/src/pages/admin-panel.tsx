@@ -12,8 +12,15 @@ interface Message {
   email: string;
   subject: string;
   message: string;
+  status: "cold" | "responded" | "closed";
   createdAt: string;
 }
+
+const statusColors: Record<string, string> = {
+  cold: "bg-slate-100 text-slate-800 hover:bg-slate-200",
+  responded: "bg-blue-100 text-blue-800 hover:bg-blue-200",
+  closed: "bg-green-100 text-green-800 hover:bg-green-200",
+};
 
 export default function AdminPanel() {
   const [, setLocation] = useLocation();
@@ -63,6 +70,32 @@ export default function AdminPanel() {
     }
   }
 
+  async function handleStatusChange(messageId: string, newStatus: "cold" | "responded" | "closed") {
+    try {
+      const response = await fetch(`/api/admin/messages/${messageId}/status`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ status: newStatus }),
+      });
+
+      if (!response.ok) throw new Error("Failed to update status");
+
+      // Update local state
+      setMessages(messages.map(msg => msg.id === messageId ? { ...msg, status: newStatus } : msg));
+      toast({
+        title: "Status Updated",
+        description: `Message marked as ${newStatus}`,
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to update status",
+        variant: "destructive",
+      });
+    }
+  }
+
   return (
     <div className="min-h-screen bg-slate-50 p-6">
       <div className="max-w-6xl mx-auto">
@@ -95,6 +128,7 @@ export default function AdminPanel() {
                       <TableHead>Email</TableHead>
                       <TableHead>Subject</TableHead>
                       <TableHead>Message</TableHead>
+                      <TableHead>Status</TableHead>
                       <TableHead>Date</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -108,8 +142,24 @@ export default function AdminPanel() {
                         <TableCell className="font-medium" data-testid={`text-subject-${msg.id}`}>
                           {msg.subject}
                         </TableCell>
-                        <TableCell className="max-w-xs truncate" data-testid={`text-message-${msg.id}`}>
+                        <TableCell className="max-w-2xl whitespace-pre-wrap" data-testid={`text-message-${msg.id}`}>
                           {msg.message}
+                        </TableCell>
+                        <TableCell data-testid={`cell-status-${msg.id}`}>
+                          <div className="flex gap-2 flex-wrap">
+                            {(["cold", "responded", "closed"] as const).map((s) => (
+                              <button
+                                key={s}
+                                onClick={() => handleStatusChange(msg.id, s)}
+                                className={`px-3 py-1 rounded text-sm font-medium cursor-pointer transition-colors ${
+                                  msg.status === s ? statusColors[s] : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                                }`}
+                                data-testid={`button-status-${s}-${msg.id}`}
+                              >
+                                {s}
+                              </button>
+                            ))}
+                          </div>
                         </TableCell>
                         <TableCell data-testid={`text-date-${msg.id}`}>
                           {format(new Date(msg.createdAt), "MMM dd, yyyy HH:mm")}
