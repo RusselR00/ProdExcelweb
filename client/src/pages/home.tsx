@@ -25,7 +25,7 @@ export default function Home() {
               Precision. Power. <br/>
               <span className="text-secondary">Reliability.</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl leading-relaxed drop-shadow-md">
+            <p className="text-lg md:text-xl text-white font-medium mb-8 max-w-xl leading-relaxed drop-shadow-md">
               Specialized Anchor Handling Tug chartering and marine support operations. We deliver maritime excellence across Singapore and beyond.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

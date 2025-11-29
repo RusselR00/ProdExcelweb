@@ -11,8 +11,8 @@ export default function Vessel() {
       <div className="bg-slate-900 py-24 text-center text-white relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1518106774371-a46c530a2271?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Our Fleet</h1>
-          <p className="text-xl text-white/80">Anchor Handling Tug (AHT) Specifications</p>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 drop-shadow-lg">Our Fleet</h1>
+          <p className="text-xl text-white font-medium drop-shadow-md">Anchor Handling Tug (AHT) Specifications</p>
         </div>
       </div>
 

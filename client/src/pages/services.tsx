@@ -43,8 +43,8 @@ export default function Services() {
         <img src={servicesHero} alt="Offshore Services" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Our Services</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">Comprehensive marine solutions for a demanding industry.</p>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 drop-shadow-lg">Our Services</h1>
+          <p className="text-xl text-white font-medium max-w-2xl mx-auto drop-shadow-md">Comprehensive marine solutions for a demanding industry.</p>
         </div>
       </div>
 

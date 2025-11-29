@@ -15,8 +15,8 @@ export default function About() {
            <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
         </div>
         <div className="relative container z-10 mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 drop-shadow-md">About Excelessel</h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto drop-shadow-sm">Setting the standard in marine chartering reliability.</p>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 drop-shadow-lg">About Excelessel</h1>
+          <p className="text-xl text-white font-medium max-w-2xl mx-auto drop-shadow-md">Setting the standard in marine chartering reliability.</p>
         </div>
       </div>
 
