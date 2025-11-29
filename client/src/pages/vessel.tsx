@@ -19,7 +19,7 @@ export default function Vessel() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 mb-20">
             <div className="space-y-4">
-              <img src={vesselImage} alt="BOURBON LIBERTY 200 AHTS" className="rounded-2xl shadow-2xl w-full object-cover" />
+              <img src={vesselImage} alt="BOURBON LIBERTY 200 AHTS" className="rounded-2xl shadow-2xl w-full object-cover ml-[0px] mr-[0px] pl-[0px] pr-[0px] pt-[0px] pb-[0px] mt-[-19px] mb-[-19px]" />
               <div className="grid grid-cols-2 gap-4">
                 <img src={detailImage} alt="Winch Detail" className="rounded-xl shadow-lg w-full h-48 object-cover" />
                 <div className="rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 font-medium text-center">Deck Layout View
