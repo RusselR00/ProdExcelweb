@@ -2,7 +2,6 @@ import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
-import { sendEmail } from "./email";
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
 const ADMIN_SESSIONS = new Set<string>();
@@ -79,7 +78,7 @@ export async function registerRoutes(
     try {
       const clientIP = getClientIP(req);
       
-      // Check rate limiting
+      // Check rate limiting - max 5 submissions per IP per 24 hours
       if (!checkRateLimit(clientIP)) {
         return res.status(429).json({ 
           error: "Too many submissions. Please try again later." 
@@ -87,39 +86,7 @@ export async function registerRoutes(
       }
 
       const parsed = insertContactMessageSchema.parse(req.body);
-      
       const message = await storage.createContactMessage(parsed);
-      
-      // Send email to admin
-      await sendEmail({
-        to: "management@excelessel.com",
-        subject: `New Charter Inquiry: ${parsed.subject}`,
-        html: `
-          <h2>New Contact Message from ${parsed.name}</h2>
-          <p><strong>From:</strong> ${parsed.name}</p>
-          <p><strong>Email:</strong> ${parsed.email}</p>
-          <p><strong>Subject:</strong> ${parsed.subject}</p>
-          <hr/>
-          <p><strong>Message:</strong></p>
-          <p>${parsed.message.replace(/\n/g, "<br>")}</p>
-          <hr/>
-          <p><small>This message was submitted through your contact form. You can reply to ${parsed.email}</small></p>
-        `,
-      });
-
-      // Send confirmation email to user
-      await sendEmail({
-        to: parsed.email,
-        subject: "We received your message - Excelessel Marine Services",
-        html: `
-          <p>Dear ${parsed.name},</p>
-          <p>Thank you for contacting Excelessel Marine Services. We have received your inquiry and our team will get back to you shortly.</p>
-          <p><strong>Your Message:</strong></p>
-          <p>${parsed.message.replace(/\n/g, "<br>")}</p>
-          <hr/>
-          <p>Best regards,<br><strong>Excelessel Marine Services Team</strong></p>
-        `,
-      });
 
       res.json({ success: true, message });
     } catch (error) {
