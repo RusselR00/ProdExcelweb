@@ -39,12 +39,13 @@ export default function Services() {
 
   return (
     <Layout>
-      <div className="relative h-[400px] flex items-center justify-center">
+      <div className="relative h-[400px] flex items-center justify-center overflow-hidden">
         <img src={servicesHero} alt="Offshore Services" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 drop-shadow-lg">Our Services</h1>
-          <p className="text-xl text-white font-medium max-w-2xl mx-auto drop-shadow-md">Comprehensive marine solutions for a demanding industry.</p>
+        <div className="absolute inset-0 bg-slate-900/70" />
+        <div className="absolute inset-0 bg-primary/50 mix-blend-multiply" />
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 drop-shadow-lg">Our Services</h1>
+          <p className="text-xl text-white font-medium max-w-2xl mx-auto drop-shadow-md leading-relaxed">Comprehensive marine solutions for a demanding industry.</p>
         </div>
       </div>
 

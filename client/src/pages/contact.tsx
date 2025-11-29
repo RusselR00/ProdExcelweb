@@ -48,11 +48,12 @@ export default function Contact() {
              alt="Contact Excelessel" 
              className="w-full h-full object-cover"
            />
-           <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
+           <div className="absolute inset-0 bg-slate-900/70" />
+           <div className="absolute inset-0 bg-primary/50 mix-blend-multiply" />
         </div>
-        <div className="relative container z-10 mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 drop-shadow-lg">Contact Us</h1>
-          <p className="text-xl text-white font-medium drop-shadow-md">Get in touch for chartering rates and availability.</p>
+        <div className="relative container z-10 mx-auto px-4 flex flex-col items-center justify-center h-full min-h-[300px]">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 drop-shadow-lg">Contact Us</h1>
+          <p className="text-xl text-white font-medium drop-shadow-md leading-relaxed">Get in touch for chartering rates and availability.</p>
         </div>
       </div>
 

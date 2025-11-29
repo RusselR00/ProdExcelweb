@@ -12,11 +12,12 @@ export default function About() {
              alt="Excelessel AHT Vessel" 
              className="w-full h-full object-cover"
            />
-           <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
+           <div className="absolute inset-0 bg-slate-900/70" />
+           <div className="absolute inset-0 bg-primary/50 mix-blend-multiply" />
         </div>
-        <div className="relative container z-10 mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 drop-shadow-lg">About Excelessel</h1>
-          <p className="text-xl text-white font-medium max-w-2xl mx-auto drop-shadow-md">Setting the standard in marine chartering reliability.</p>
+        <div className="relative container z-10 mx-auto px-4 flex flex-col items-center justify-center h-full min-h-[300px]">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 drop-shadow-lg">About Excelessel</h1>
+          <p className="text-xl text-white font-medium max-w-2xl mx-auto drop-shadow-md leading-relaxed">Setting the standard in marine chartering reliability.</p>
         </div>
       </div>
 
