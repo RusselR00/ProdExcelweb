@@ -98,12 +98,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Sheet>
         </div>
       </header>
-
       {/* Main Content */}
       <main className="flex-grow pt-0">
         {children}
       </main>
-
       {/* Footer */}
       <footer className="bg-slate-50 text-slate-900 pt-16 pb-8 border-t border-slate-200">
         <div className="container mx-auto px-4 md:px-6">
@@ -139,7 +137,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <address className="not-italic text-slate-600 space-y-2">
                 <p>Singapore Office</p>
                 <p>management@excelessel.com</p>
-                <p>+65 6123 4567</p>
+                <p>+65 8533 2699</p>
               </address>
             </div>
           </div>
