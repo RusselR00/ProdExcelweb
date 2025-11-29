@@ -1,13 +1,22 @@
 import Layout from "@/components/layout";
 import { CheckCircle2 } from "lucide-react";
+import heroImage from "@assets/generated_images/side_profile_of_the_aht_vessel.png";
 
 export default function About() {
   return (
     <Layout>
-      <div className="bg-primary py-24 text-center text-white">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">About Excelessel</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">Setting the standard in marine chartering reliability.</p>
+      <div className="relative py-24 text-center text-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
+           <img 
+             src={heroImage} 
+             alt="Excelessel AHT Vessel" 
+             className="w-full h-full object-cover"
+           />
+           <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
+        </div>
+        <div className="relative container z-10 mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4 drop-shadow-md">About Excelessel</h1>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto drop-shadow-sm">Setting the standard in marine chartering reliability.</p>
         </div>
       </div>
 
