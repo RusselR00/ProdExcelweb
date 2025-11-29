@@ -101,7 +101,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-primary">Office Address</h3>
-                      <p className="text-slate-600">10 Anson Road, International Plaza, #35-10 Singapore 079903</p>
+                      <p className="text-slate-600">1 Corporation Drive, Unit 03-02, Singapore 619775</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -125,7 +125,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-primary">Phone</h3>
-                      <p className="text-slate-600">+65 6123 4567</p>
+                      <p className="text-slate-600">Tel: +65 9825 6032</p>
+                      <p className="text-slate-600">+65 8533 2699</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -214,9 +215,9 @@ export default function Contact() {
             }}
           >
             <div className="flex-1">
-              <div className="font-bold text-lg text-slate-800">Map: 10 Anson Road</div>
+              <div className="font-bold text-lg text-slate-800">Map: 1 Corporation Drive</div>
               <div className="text-sm text-slate-600 mt-1">
-                International Plaza, #35-10, Singapore 079903
+                Unit 03-02, Singapore 619775
               </div>
             </div>
             <Button
@@ -228,7 +229,7 @@ export default function Contact() {
           </div>
         ) : (
           <iframe
-            src="https://www.google.com/maps?q=10%20Anson%20Road%2C%20International%20Plaza%2C%20%2335-10%2C%20Singapore%20079903&output=embed"
+            src="https://www.google.com/maps?q=1%20Corporation%20Drive%2C%20Unit%2003-02%2C%20Singapore%20619775&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0, borderRadius: "8px", aspectRatio: "16 / 9" }}

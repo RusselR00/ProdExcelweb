@@ -49,10 +49,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-secondary cursor-pointer ${location === link.href
-                    ? "text-secondary font-semibold"
-                    : scrolled
-                      ? "text-slate-600"
-                      : "text-white/90"
+                  ? "text-secondary font-semibold"
+                  : scrolled
+                    ? "text-slate-600"
+                    : "text-white/90"
                   }`}
               >
                 {link.label}
@@ -133,8 +133,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="font-heading font-semibold text-lg mb-4 text-primary">Contact</h4>
               <address className="not-italic text-slate-600 space-y-2">
                 <p className="font-semibold">Singapore Office</p>
-                <p>10 Anson Road, International Plaza,<br />#35-10 Singapore 079903</p>
+                <p>1 Corporation Drive<br />Unit 03-02<br />Singapore 619775</p>
                 <p>management@excelessel.com</p>
+                <p>Tel: +65 9825 6032</p>
                 <p>+65 8533 2699</p>
               </address>
             </div>
