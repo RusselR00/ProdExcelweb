@@ -2,7 +2,7 @@ import Layout from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Anchor, ShieldCheck, Globe } from "lucide-react";
-import heroImage from "@assets/generated_images/hero_image_of_an_anchor_handling_tug_at_sea.png";
+import heroImage from "@assets/generated_images/hero_image_of_an_anchor_handling_tug_at_sea.jpg";
 import tugImage from "@assets/generated_images/tugboat_towing_a_barge.png";
 
 export default function Home() {
