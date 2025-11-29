@@ -16,6 +16,7 @@ export const contactMessages = pgTable("contact_messages", {
   subject: text("subject").notNull(),
   message: text("message").notNull(),
   status: text("status").default("pending").notNull(), // 'pending', 'replied', 'resolved'
+  ipAddress: text("ip_address"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
