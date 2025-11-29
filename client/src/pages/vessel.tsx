@@ -15,7 +15,6 @@ export default function Vessel() {
           <p className="text-xl text-white font-medium drop-shadow-md">Anchor Handling Tug (AHT) Specifications</p>
         </div>
       </div>
-
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 mb-20">
@@ -34,9 +33,7 @@ export default function Vessel() {
                 Flagship Vessel
               </div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">BOURBON LIBERTY 200 Series</h2>
-              <p className="text-slate-600 mb-8 leading-relaxed">
-                The BOURBON LIBERTY 200 series is a high-performance DP 2 diesel-electric anchor handling tug supply vessel. Designed for versatility, it offers environmentally friendly propulsion, exceptional maneuverability with fully redundant dynamic positioning (Class II), and capabilities typically found in much larger vessels. It is equally at home serving shallow water ports or deepwater installations.
-              </p>
+              <p className="text-slate-600 mb-8 leading-relaxed">The BOURBON LIBERTY 206 is a high-performance DP 2 diesel-electric anchor handling tug supply vessel. Designed for versatility, it offers environmentally friendly propulsion, exceptional maneuverability with fully redundant dynamic positioning (Class II), and capabilities typically found in much larger vessels. It is equally at home serving shallow water ports or deepwater installations.</p>
 
               <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
                 <div className="p-4 bg-slate-50 border-b border-slate-200 font-bold text-primary">
