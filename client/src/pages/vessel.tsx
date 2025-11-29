@@ -32,7 +32,7 @@ export default function Vessel() {
               <div className="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-4">
                 Flagship Vessel
               </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">BOURBON LIBERTY 200 Series</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">BOURBON LIBERTY 206</h2>
               <p className="text-slate-600 mb-8 leading-relaxed">The BOURBON LIBERTY 206 is a high-performance DP 2 diesel-electric anchor handling tug supply vessel. Designed for versatility, it offers environmentally friendly propulsion, exceptional maneuverability with fully redundant dynamic positioning (Class II), and capabilities typically found in much larger vessels. It is equally at home serving shallow water ports or deepwater installations.</p>
 
               <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
