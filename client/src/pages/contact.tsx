@@ -9,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 import contactHero from "@assets/generated_images/hero_image_of_an_anchor_handling_tug_at_sea.png";
 
 const formSchema = z.object({
@@ -20,6 +21,8 @@ const formSchema = z.object({
 
 export default function Contact() {
   const { toast } = useToast();
+  const [mapLoaded, setMapLoaded] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -58,13 +61,13 @@ export default function Contact() {
     <Layout>
       <div className="relative py-24 text-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-           <img 
-             src={contactHero} 
-             alt="Contact Excelessel" 
-             className="w-full h-full object-cover"
-           />
-           <div className="absolute inset-0 bg-slate-900/70" />
-           <div className="absolute inset-0 bg-primary/50 mix-blend-multiply" />
+          <img
+            src={contactHero}
+            alt="Contact Excelessel"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-900/70" />
+          <div className="absolute inset-0 bg-primary/50 mix-blend-multiply" />
         </div>
         <div className="relative container z-10 mx-auto px-4 flex flex-col items-center justify-center h-full min-h-[300px]">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6 drop-shadow-lg">Contact Us</h1>
@@ -92,11 +95,11 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-primary">Office Address</h3>
-                      <p className="text-slate-600">12 Marina Boulevard, Marina Bay Financial Centre, Singapore 018982</p>
+                      <p className="text-slate-600">10 Anson Road, International Plaza, #35-10 Singapore 079903</p>
                     </div>
                   </CardContent>
                 </Card>
-                
+
                 <Card>
                   <CardContent className="flex items-center gap-4 p-6">
                     <div className="p-3 rounded-full bg-primary/10 text-primary">
@@ -174,10 +177,10 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Message</FormLabel>
                         <FormControl>
-                          <Textarea 
-                            placeholder="Please provide details about your charter requirements..." 
+                          <Textarea
+                            placeholder="Please provide details about your charter requirements..."
                             className="min-h-[150px]"
-                            {...field} 
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
@@ -194,21 +197,41 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <div className="h-[400px] bg-slate-200 w-full relative">
-        <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-semibold text-lg">
-          Google Maps Embed Placeholder
-        </div>
-        {/* In a real app, this would be an iframe */}
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819917806143!2d103.8522982749667!3d1.2819062987058816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da190c2c94ccb3%3A0x11213560f2932b1e!2sMarina%20Bay%20Financial%20Centre!5e0!3m2!1sen!2ssg!4v1715678901234!5m2!1sen!2ssg" 
-          width="100%" 
-          height="100%" 
-          style={{border:0, filter: "grayscale(100%) opacity(0.8)"}} 
-          allowFullScreen 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+      {/* Lazy-Loading Map */}
+      <div className="w-full" style={{ aspectRatio: "16 / 9", maxWidth: "100%" }}>
+        {!mapLoaded ? (
+          <div
+            className="w-full h-full flex items-center justify-between p-6 gap-4 rounded-lg shadow-md"
+            style={{
+              background: "linear-gradient(180deg, #eef2f7, #dfe7ef)",
+              aspectRatio: "16 / 9"
+            }}
+          >
+            <div className="flex-1">
+              <div className="font-bold text-lg text-slate-800">Map: 10 Anson Road</div>
+              <div className="text-sm text-slate-600 mt-1">
+                International Plaza, #35-10, Singapore 079903
+              </div>
+            </div>
+            <Button
+              onClick={() => setMapLoaded(true)}
+              className="bg-[#0b63d6] hover:bg-[#0b63d6]/90 text-white font-semibold px-6"
+            >
+              Load Map
+            </Button>
+          </div>
+        ) : (
+          <iframe
+            src="https://www.google.com/maps?q=10%20Anson%20Road%2C%20International%20Plaza%2C%20%2335-10%2C%20Singapore%20079903&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0, borderRadius: "8px", aspectRatio: "16 / 9" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Office Location Map"
+          />
+        )}
       </div>
     </Layout>
   );
