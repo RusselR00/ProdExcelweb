@@ -3,6 +3,7 @@ import { Menu, Anchor } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import logoImage from "@assets/WhatsApp Image 2025-11-29 at 16.19.10_bf896a35_1764413632374.jpg";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -35,12 +36,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group cursor-pointer">
-            <div className={`p-2 rounded bg-primary text-white transition-transform group-hover:scale-105`}>
-              <Anchor className="h-6 w-6" />
-            </div>
-            <span className={`text-2xl font-heading font-bold tracking-tight ${scrolled ? "text-primary" : "text-primary md:text-white"}`}>
-              EXCELESSEL
-            </span>
+            <img 
+              src={logoImage} 
+              alt="Excelessel Offshore Pte Ltd" 
+              className="h-12 w-auto object-contain rounded-sm"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -107,8 +107,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <Anchor className="h-6 w-6 text-secondary" />
-                <span className="text-2xl font-heading font-bold">EXCELESSEL</span>
+                <img 
+                  src={logoImage} 
+                  alt="Excelessel Offshore Pte Ltd" 
+                  className="h-16 w-auto object-contain rounded-sm" 
+                />
               </div>
               <p className="text-white/70 max-w-md mb-6 leading-relaxed">
                 Singapore-based marine service provider specializing in Anchor Handling Tug (AHT) chartering, tug operations, and reliable marine support services.
