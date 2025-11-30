@@ -7,7 +7,8 @@ import LoadingScreen from "@/components/loading-screen";
 import MobileContactButtons from "@/components/mobile-contact-buttons";
 import heroImage from "@assets/generated_images/hero_image_of_an_anchor_handling_tug_at_sea.jpg";
 import heroVideo from "@assets/herovideo.mp4";
-import logoVideo from "@assets/logoloadingscreen.webm";
+import logoVideoWebm from "@assets/logoloadingscreen.webm";
+import logoVideoMp4 from "@assets/logoloadingscreen.mp4";
 import tugImage from "@assets/generated_images/tugboat_towing_a_barge.png";
 
 export default function Home() {
@@ -17,7 +18,8 @@ export default function Home() {
     <>
       {showLoading && (
         <LoadingScreen
-          logoVideoSrc={logoVideo}
+          logoVideoMp4={logoVideoMp4}
+          logoVideoWebm={logoVideoWebm}
           onLoadComplete={() => setShowLoading(false)}
         />
       )}

@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 interface LoadingScreenProps {
     onLoadComplete: () => void;
-    logoVideoSrc: string;
+    logoVideoMp4: string;
+    logoVideoWebm: string;
 }
 
-export default function LoadingScreen({ onLoadComplete, logoVideoSrc }: LoadingScreenProps) {
+export default function LoadingScreen({ onLoadComplete, logoVideoMp4, logoVideoWebm }: LoadingScreenProps) {
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
@@ -44,7 +45,10 @@ export default function LoadingScreen({ onLoadComplete, logoVideoSrc }: LoadingS
                     playsInline
                     className="w-full h-full object-contain"
                 >
-                    <source src={logoVideoSrc} type="video/webm" />
+                    {/* MP4 first for iOS/Safari compatibility */}
+                    <source src={logoVideoMp4} type="video/mp4" />
+                    {/* WebM for Android/Chrome */}
+                    <source src={logoVideoWebm} type="video/webm" />
                     {/* Fallback for browsers that don't support video */}
                     <div className="w-full h-full flex items-center justify-center">
                         <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-primary"></div>
