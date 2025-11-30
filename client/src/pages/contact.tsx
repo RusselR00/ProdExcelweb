@@ -125,7 +125,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-primary">Phone</h3>
-                      <p className="text-slate-600">Tel: +65 9825 6032</p>
+                      <p className="text-slate-600">+65 9825 6032</p>
                       <p className="text-slate-600">+65 8533 2699</p>
                     </div>
                   </CardContent>

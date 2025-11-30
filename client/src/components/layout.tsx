@@ -135,7 +135,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <p className="font-semibold">Singapore Office</p>
                 <p>1 Corporation Drive<br />Unit 03-02<br />Singapore 619775</p>
                 <p>management@excelessel.com</p>
-                <p>Tel: +65 9825 6032</p>
+                <p>+65 9825 6032</p>
                 <p>+65 8533 2699</p>
               </address>
             </div>
