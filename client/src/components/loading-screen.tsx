@@ -51,11 +51,6 @@ export default function LoadingScreen({ onLoadComplete, logoVideoSrc }: LoadingS
                     </div>
                 </video>
             </div>
-
-            {/* Optional: Loading text */}
-            <div className="absolute bottom-20 text-slate-800 text-lg font-medium animate-pulse">
-                Loading...
-            </div>
         </div>
     );
 }
