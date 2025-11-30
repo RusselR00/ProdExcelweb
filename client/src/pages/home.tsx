@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Anchor, ShieldCheck, Globe } from "lucide-react";
 import heroImage from "@assets/generated_images/hero_image_of_an_anchor_handling_tug_at_sea.jpg";
+import heroVideo from "@assets/herovideo.mp4";
 import tugImage from "@assets/generated_images/tugboat_towing_a_barge.png";
 
 export default function Home() {
@@ -11,11 +12,23 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="Excelessel AHT Vessel at Sea"
+          {/* Video Background */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover"
-          />
+            poster={heroImage}
+          >
+            <source src={heroVideo} type="video/mp4" />
+            {/* Fallback image if video fails to load */}
+            <img
+              src={heroImage}
+              alt="Excelessel AHT Vessel at Sea"
+              className="w-full h-full object-cover"
+            />
+          </video>
           <div className="absolute inset-0 bg-primary/40 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent mix-blend-multiply" />
         </div>
 
