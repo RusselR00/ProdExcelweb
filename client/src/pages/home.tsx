@@ -20,7 +20,7 @@ export default function Home() {
           onLoadComplete={() => setShowLoading(false)}
         />
       )}
-      {!showLoading && (
+      <div className={showLoading ? "opacity-0 pointer-events-none" : "opacity-100"}>
         <Layout>
           {/* Hero Section */}
           <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -169,7 +169,7 @@ export default function Home() {
             </div>
           </section>
         </Layout>
-      )}
+      </div>
     </>
   );
 }
