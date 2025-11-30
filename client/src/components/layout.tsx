@@ -75,20 +75,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent className="bg-white">
               <div className="flex flex-col gap-6 mt-10">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-lg font-medium transition-colors hover:text-secondary cursor-pointer ${location === link.href ? "text-secondary" : "text-slate-600"
+                    className={`text-lg font-medium transition-colors hover:text-secondary cursor-pointer ${location === link.href ? "text-secondary font-bold" : "text-slate-900"
                       }`}
                   >
                     {link.label}
                   </Link>
                 ))}
                 <Link href="/contact">
-                  <Button className="w-full mt-4">Request Charter</Button>
+                  <Button className="w-full mt-4 bg-secondary text-slate-900 hover:bg-secondary/90 font-semibold">Request Charter</Button>
                 </Link>
               </div>
             </SheetContent>

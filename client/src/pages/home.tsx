@@ -30,6 +30,7 @@ export default function Home() {
               loop
               muted
               playsInline
+              preload="auto"
               className="w-full h-full object-cover"
               poster={heroImage}
             >
