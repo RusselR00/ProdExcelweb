@@ -6,7 +6,7 @@ export default function MobileContactButtons() {
             {/* Call Button */}
             <a
                 href="tel:+6598256032"
-                className="flex-1 bg-primary text-white py-4 flex items-center justify-center gap-2 font-semibold text-lg hover:bg-primary/90 transition-colors"
+                className="flex-1 bg-sky-500 text-white py-4 flex items-center justify-center gap-2 font-semibold text-lg hover:bg-sky-600 transition-colors"
             >
                 <Phone className="h-5 w-5" />
                 Call Now

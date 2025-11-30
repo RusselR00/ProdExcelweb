@@ -169,9 +169,9 @@ export default function Home() {
               </div>
             </div>
           </section>
+          <MobileContactButtons />
         </Layout>
       </div>
-      <MobileContactButtons />
     </>
   );
 }
