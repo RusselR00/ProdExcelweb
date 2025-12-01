@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 
 interface LoadingScreenProps {
     onLoadComplete: () => void;
-    logoVideoMp4: string;
-    logoVideoWebm: string;
+    loadingGif: string;
 }
 
-export default function LoadingScreen({ onLoadComplete, logoVideoMp4, logoVideoWebm }: LoadingScreenProps) {
+export default function LoadingScreen({ onLoadComplete, loadingGif }: LoadingScreenProps) {
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
@@ -33,27 +32,16 @@ export default function LoadingScreen({ onLoadComplete, logoVideoMp4, logoVideoW
 
     return (
         <div
-            className={`fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"
+            className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"
                 }`}
         >
-            {/* Spinning Logo Video */}
+            {/* Animated Loading GIF */}
             <div className="relative w-64 h-64 md:w-80 md:h-80">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                <img
+                    src={loadingGif}
+                    alt="Loading..."
                     className="w-full h-full object-contain"
-                >
-                    {/* MP4 first for iOS/Safari compatibility */}
-                    <source src={logoVideoMp4} type="video/mp4" />
-                    {/* WebM for Android/Chrome */}
-                    <source src={logoVideoWebm} type="video/webm" />
-                    {/* Fallback for browsers that don't support video */}
-                    <div className="w-full h-full flex items-center justify-center">
-                        <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-primary"></div>
-                    </div>
-                </video>
+                />
             </div>
         </div>
     );
