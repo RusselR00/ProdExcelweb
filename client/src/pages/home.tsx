@@ -7,7 +7,7 @@ import LoadingScreen from "@/components/loading-screen";
 import MobileContactButtons from "@/components/mobile-contact-buttons";
 import heroImage from "@assets/generated_images/hero_image_of_an_anchor_handling_tug_at_sea.jpg";
 import heroVideo from "@assets/herovideo.mp4";
-import loadingGif from "@assets/loadingscreenf.gif";
+import loadingGif from "@assets/loadingscreentrans.gif";
 import tugImage from "@assets/generated_images/tugboat_towing_a_barge.png";
 
 export default function Home() {

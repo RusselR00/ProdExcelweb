@@ -32,7 +32,7 @@ export default function LoadingScreen({ onLoadComplete, loadingGif }: LoadingScr
 
     return (
         <div
-            className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"
+            className={`fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"
                 }`}
         >
             {/* Animated Loading GIF */}
