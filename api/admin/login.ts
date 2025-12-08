@@ -1,6 +1,13 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { serialize } from "cookie";
-import { ADMIN_PASSWORD, signToken } from "../_lib/auth";
+import jwt from "jsonwebtoken";
+
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "excelessel2025";
+
+function signToken(): string {
+    const secret = process.env.SUPABASE_JWT_SECRET || "fallback-secret";
+    return jwt.sign({ role: "admin" }, secret, { expiresIn: "24h" });
+}
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
     if (req.method !== "POST") {
