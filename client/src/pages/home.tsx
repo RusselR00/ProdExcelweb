@@ -58,8 +58,12 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/contact">
-                    <Button size="lg" className="text-base px-8 h-12 text-[#ffffff] bg-[#fd8f43] hover:bg-[#fd8f43]/90 border-none shadow-lg shadow-secondary/20 font-semibold">
-                      Request Charter
+                    <Button size="lg" className="group relative text-base px-10 h-14 text-white bg-gradient-to-r from-[#fd8f43] to-[#ff6b35] hover:from-[#ff6b35] hover:to-[#fd8f43] border-none shadow-2xl shadow-secondary/30 font-bold tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-secondary/50 overflow-hidden">
+                      <span className="relative z-10 flex items-center gap-2">
+                        Request Charter
+                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </span>
+                      <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                     </Button>
                   </Link>
                   <Link href="/vessel">
