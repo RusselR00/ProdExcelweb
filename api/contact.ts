@@ -1,3 +1,40 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
+import { eq, and, gt, sql } from "drizzle-orm";
+import { pgTable, text, varchar, timestamp } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+
+// Schema definition (inlined to avoid bundling issues)
+const contactMessages = pgTable("contact_messages", {
+    id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+    name: text("name").notNull(),
+    email: text("email").notNull(),
+    subject: text("subject").notNull(),
+    message: text("message").notNull(),
+    status: text("status").default("pending").notNull(),
+    ipAddress: text("ip_address"),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+const insertContactMessageSchema = createInsertSchema(contactMessages).omit({
+    id: true,
+    createdAt: true,
+});
+
+// Initialize database connection
+const connectionString = process.env.DATABASE_URL;
+if (!connectionString) {
+    throw new Error("DATABASE_URL environment variable is not set");
+}
+
+const client = postgres(connectionString, {
+    prepare: false,
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+const db = drizzle(client);
 
 const RATE_LIMIT = {
     maxSubmissions: 5,
