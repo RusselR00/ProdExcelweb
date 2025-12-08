@@ -1,6 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { db } from "../../../../server/db";
-import { contactMessages } from "../../../../shared/schema";
+import { db, contactMessages } from "../../../_lib/db-helper";
 import { eq } from "drizzle-orm";
 import { verifyAuth } from "../../../_lib/auth";
 
