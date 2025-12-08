@@ -1,22 +1,3 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
-import { contactMessages, insertContactMessageSchema } from "../shared/schema";
-import { eq, and, gt, sql } from "drizzle-orm";
-
-// Initialize database connection
-const connectionString = process.env.DATABASE_URL;
-if (!connectionString) {
-    throw new Error("DATABASE_URL environment variable is not set");
-}
-
-const client = postgres(connectionString, {
-    prepare: false,
-    ssl: {
-        rejectUnauthorized: false
-    }
-});
-const db = drizzle(client);
 
 const RATE_LIMIT = {
     maxSubmissions: 5,
