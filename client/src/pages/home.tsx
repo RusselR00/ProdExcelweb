@@ -48,7 +48,7 @@ export default function Home() {
             </div>
 
             <div className="container relative z-10 px-4 md:px-6 text-center md:text-left pt-8 md:pt-20">
-              <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-1000 bg-[#0a2540]/70 backdrop-blur-xl rounded-3xl p-8 md:p-12 border-2 border-white/20 shadow-2xl">
+              <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-1000 bg-[#0a2540]/45 backdrop-blur-xl rounded-3xl p-6 md:p-10 border-2 border-white/20 shadow-2xl">
                 {/* Brand Name */}
                 <div className="mb-6 animate-in fade-in slide-in-from-bottom-2 duration-700">
                   <h2 className="text-[#ffa559] font-heading font-black text-2xl md:text-4xl tracking-[0.25em] mb-3 drop-shadow-[0_0_30px_rgba(255,165,89,0.5)]">
@@ -166,9 +166,9 @@ export default function Home() {
 
               <div className="grid md:grid-cols-3 gap-8">
                 {[
-                  { title: "Tug Chartering", desc: "Reliable towage and barge handling services for regional logistics." },
-                  { title: "Anchor Handling", desc: "Expert assistance in anchor deployment and retrieval for offshore rigs." },
-                  { title: "Offshore Support", desc: "Supply and standby duties ensuring operational continuity." }
+                  { title: "Tug Chartering", desc: "Reliable towage and barge handling services for regional logistics.", link: "/services/tug-chartering" },
+                  { title: "Anchor Handling", desc: "Expert assistance in anchor deployment and retrieval for offshore rigs.", link: "/services/anchor-handling" },
+                  { title: "Offshore Support", desc: "Supply and standby duties ensuring operational continuity.", link: "/services/offshore-support" }
                 ].map((service, i) => (
                   <div key={i} className="group p-8 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:border-secondary/20 transition-all duration-300">
                     <div className="h-12 w-12 rounded-lg bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
@@ -176,7 +176,7 @@ export default function Home() {
                     </div>
                     <h3 className="text-xl font-bold text-primary mb-3">{service.title}</h3>
                     <p className="text-slate-600 mb-6">{service.desc}</p>
-                    <Link href="/services">
+                    <Link href={service.link}>
                       <span className="text-sm font-semibold text-secondary cursor-pointer">Learn Details &rarr;</span>
                     </Link>
                   </div>

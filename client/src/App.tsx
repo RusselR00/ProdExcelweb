@@ -14,6 +14,9 @@ import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsConditions from "@/pages/terms-conditions";
 import AdminLogin from "@/pages/admin-login";
 import AdminPanel from "@/pages/admin-panel";
+import TugChartering from "@/pages/services/tug-chartering";
+import AnchorHandling from "@/pages/services/anchor-handling";
+import OffshoreSupport from "@/pages/services/offshore-support";
 
 function Router() {
   return (
@@ -23,6 +26,9 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/vessel" component={Vessel} />
         <Route path="/services" component={Services} />
+        <Route path="/services/tug-chartering" component={TugChartering} />
+        <Route path="/services/anchor-handling" component={AnchorHandling} />
+        <Route path="/services/offshore-support" component={OffshoreSupport} />
         <Route path="/contact" component={Contact} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms-conditions" component={TermsConditions} />

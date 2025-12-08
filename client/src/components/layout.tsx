@@ -48,20 +48,35 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm font-semibold tracking-wide transition-all duration-300 cursor-pointer group ${location === link.href
-                    ? scrolled
-                      ? "text-primary"
-                      : "text-white"
-                    : scrolled
-                      ? "text-slate-600 hover:text-primary"
-                      : "text-white/90 hover:text-white"
+                className={`relative text-sm font-semibold tracking-wide transition-all duration-300 cursor-pointer group hover:scale-110 ${location === link.href
+                  ? scrolled
+                    ? "text-primary"
+                    : "text-white"
+                  : scrolled
+                    ? "text-slate-600 hover:text-white"
+                    : "text-white/90 hover:text-white"
                   }`}
+                style={
+                  location !== link.href
+                    ? {
+                      transition: 'all 0.3s',
+                    }
+                    : undefined
+                }
+                onMouseEnter={(e) => {
+                  if (location !== link.href) {
+                    e.currentTarget.style.textShadow = '-1px -1px 0 #31576e, 1px -1px 0 #31576e, -1px 1px 0 #31576e, 1px 1px 0 #31576e';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.textShadow = 'none';
+                }}
               >
                 <span className="relative">
                   {link.label}
                   <span className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${location === link.href
-                      ? "w-full bg-secondary"
-                      : "w-0 group-hover:w-full bg-secondary"
+                    ? "w-full bg-slate-400"
+                    : "w-0 group-hover:w-full bg-slate-400"
                     }`}></span>
                 </span>
               </Link>
