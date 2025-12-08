@@ -48,12 +48,20 @@ export default function Home() {
             </div>
 
             <div className="container relative z-10 px-4 md:px-6 text-center md:text-left pt-8 md:pt-20">
-              <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-1000 bg-slate-900/50 md:bg-slate-900/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
+              <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-1000 bg-[#0a2540]/70 backdrop-blur-xl rounded-3xl p-8 md:p-12 border-2 border-white/20 shadow-2xl">
+                {/* Brand Name */}
+                <div className="mb-6 animate-in fade-in slide-in-from-bottom-2 duration-700">
+                  <h2 className="text-[#ffa559] font-heading font-black text-2xl md:text-4xl tracking-[0.25em] mb-3 drop-shadow-[0_0_30px_rgba(255,165,89,0.5)]">
+                    EXCELESSEL
+                  </h2>
+                  <div className="h-1.5 w-32 bg-gradient-to-r from-[#ffa559] via-[#ff8934] to-transparent rounded-full shadow-lg shadow-orange-500/50"></div>
+                </div>
+
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6 drop-shadow-2xl">
                   Precision. Power. <br />
-                  <span className="text-secondary">Reliability.</span>
+                  <span className="text-[#ffa559]">Reliability.</span>
                 </h1>
-                <p className="text-lg md:text-xl text-white font-medium mb-8 max-w-xl leading-relaxed drop-shadow-lg">
+                <p className="text-lg md:text-xl text-white/95 font-medium mb-8 max-w-xl leading-relaxed drop-shadow-lg">
                   Specialized Anchor Handling Tug chartering and marine support operations. We deliver maritime excellence across Singapore and beyond.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -67,8 +75,11 @@ export default function Home() {
                     </Button>
                   </Link>
                   <Link href="/vessel">
-                    <Button size="lg" variant="outline" className="text-base px-8 h-12 border-white text-white hover:bg-white hover:text-primary backdrop-blur-sm bg-white/10">
-                      Fleet Info
+                    <Button size="lg" variant="outline" className="group text-base px-10 h-14 border-2 border-white/80 text-white hover:bg-white hover:text-primary backdrop-blur-md bg-white/10 font-bold tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/30">
+                      <span className="flex items-center gap-2">
+                        Fleet Info
+                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </span>
                     </Button>
                   </Link>
                 </div>

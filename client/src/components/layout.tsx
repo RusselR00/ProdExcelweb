@@ -48,22 +48,38 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-secondary cursor-pointer ${location === link.href
-                  ? "text-secondary font-semibold"
-                  : scrolled
-                    ? "text-slate-600"
-                    : "text-white/90"
+                className={`relative text-sm font-semibold tracking-wide transition-all duration-300 cursor-pointer group ${location === link.href
+                    ? scrolled
+                      ? "text-primary"
+                      : "text-white"
+                    : scrolled
+                      ? "text-slate-600 hover:text-primary"
+                      : "text-white/90 hover:text-white"
                   }`}
               >
-                {link.label}
+                <span className="relative">
+                  {link.label}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${location === link.href
+                      ? "w-full bg-secondary"
+                      : "w-0 group-hover:w-full bg-secondary"
+                    }`}></span>
+                </span>
               </Link>
             ))}
             <Link href="/contact">
               <Button
-                variant={scrolled ? "default" : "secondary"}
-                className={scrolled ? "ml-4" : "ml-4 text-[#06b1c6] bg-[#003145] hover:bg-[#003145]/90"}
+                className={`group relative px-6 py-2.5 font-bold text-sm tracking-wide transition-all duration-300 overflow-hidden rounded-full ${scrolled
+                  ? "bg-gradient-to-r from-[#fd8f43] to-[#ff6b35] hover:from-[#ff6b35] hover:to-[#fd8f43] text-white shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 hover:scale-105"
+                  : "bg-white/95 text-primary hover:bg-white shadow-lg shadow-white/30 hover:shadow-xl hover:shadow-white/50 hover:scale-105 backdrop-blur-sm"
+                  }`}
               >
-                Request Charter
+                <span className="relative z-10 flex items-center gap-1.5">
+                  Request Charter
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+                <div className={`absolute inset-0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ${scrolled ? "bg-white/20" : "bg-primary/10"}`}></div>
               </Button>
             </Link>
           </nav>
