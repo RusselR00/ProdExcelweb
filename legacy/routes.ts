@@ -1,6 +1,6 @@
 import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
+import { storage } from "../server/storage";
 import { insertContactMessageSchema } from "@shared/schema";
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
@@ -26,18 +26,18 @@ function getClientIP(req: Request): string {
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
   const submissions = IP_SUBMISSIONS.get(ip) || [];
-  
+
   // Remove submissions older than time window
   const recentSubmissions = submissions.filter(time => now - time < RATE_LIMIT.timeWindowMs);
-  
+
   if (recentSubmissions.length >= RATE_LIMIT.maxSubmissions) {
     return false; // Rate limited
   }
-  
+
   // Add new submission timestamp
   recentSubmissions.push(now);
   IP_SUBMISSIONS.set(ip, recentSubmissions);
-  
+
   return true; // Allowed
 }
 
@@ -77,11 +77,11 @@ export async function registerRoutes(
   app.post("/api/contact", async (req, res) => {
     try {
       const clientIP = getClientIP(req);
-      
+
       // Check rate limiting - max 5 submissions per IP per 24 hours
       if (!checkRateLimit(clientIP)) {
-        return res.status(429).json({ 
-          error: "Too many submissions. Please try again later." 
+        return res.status(429).json({
+          error: "Too many submissions. Please try again later."
         });
       }
 
