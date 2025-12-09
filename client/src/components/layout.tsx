@@ -127,8 +127,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      {/* Mobile Contact Buttons - Only visible on mobile */}
-      <div className="md:hidden fixed bottom-6 right-4 z-50 flex flex-col gap-3">
+      {/* Mobile Contact Buttons - Only visible on desktop now */}
+      <div className="hidden md:flex fixed bottom-6 right-4 z-50 flex-col gap-3">
         {/* WhatsApp Button */}
         <a
           href="https://wa.me/6598256032"
